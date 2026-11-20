@@ -1,0 +1,1192 @@
+[
+ {
+  "id": "dwarves",
+  "name": "Red-White Dwarves",
+  "short": "Dwarves",
+  "colors": [
+   "R",
+   "W"
+  ],
+  "built": true,
+  "sleeves": "Thorin",
+  "main": [
+   {
+    "card": "HOB-4",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-7",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-8",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-23",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-24",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-27",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-90",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-91",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-94",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-104",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-107",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-110",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-114",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-172",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-175",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-176",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-179",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-185",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-185",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-187",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-202",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-207",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-212",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-216",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-237",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-252",
+    "printing": "Surge Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-263",
+    "printing": "Surge Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-286",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-287",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-289",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-311",
+    "printing": "Foil",
+    "qty": 1
+   }
+  ],
+  "spares": [
+   {
+    "card": "HOB-17",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-23",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-26",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-28",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-90",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-91",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-94",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-101",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-106",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-108",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-109",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-147",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-171",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-172",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-178",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-202",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-215",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-301",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-311",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "basics": {
+   "Mountain": 9,
+   "Plains": 9
+  }
+ },
+ {
+  "id": "wolves",
+  "name": "Black-Green Wolves",
+  "short": "Wolves",
+  "colors": [
+   "B",
+   "G"
+  ],
+  "built": true,
+  "sleeves": "Head of the Hunt",
+  "main": [
+   {
+    "card": "HOB-62",
+    "printing": "Foil",
+    "qty": 4
+   },
+   {
+    "card": "HOB-69",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-75",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-77",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-80",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-80",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-81",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-117",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-126",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-132",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-135",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-135",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-140",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-140",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-150",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-151",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-153",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-159",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-169",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-188",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-188",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-260",
+    "printing": "Surge Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-298",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "spares": [
+   {
+    "card": "HOB-71",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-72",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-77",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-78",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-80",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-116",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-118",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-125",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-126",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-128",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-132",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-133",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-135",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-138",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-139",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-140",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-308",
+    "printing": "Foil",
+    "qty": 1
+   }
+  ],
+  "basics": {
+   "Forest": 10,
+   "Swamp": 11
+  }
+ },
+ {
+  "id": "goblins",
+  "name": "Black-Red Goblins",
+  "short": "Goblins",
+  "colors": [
+   "B",
+   "R"
+  ],
+  "built": true,
+  "sleeves": "Gandalf, Spark Starter",
+  "main": [
+   {
+    "card": "HOB-62",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-69",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-72",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-84",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-84",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-89",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-100",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-100",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-105",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-115",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-148",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-149",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-157",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-157",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-164",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-183",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-183",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-200",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-201",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-203",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-206",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-222",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-227",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-299",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "spares": [
+   {
+    "card": "HOB-63",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-65",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-67",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-68",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-69",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-72",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-74",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-85",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-86",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-92",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-93",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-107",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-112",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-115",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-156",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-295",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "basics": {
+   "Mountain": 10,
+   "Swamp": 11
+  }
+ },
+ {
+  "id": "humans",
+  "name": "White-Blue Humans",
+  "short": "Humans",
+  "colors": [
+   "W",
+   "U"
+  ],
+  "built": true,
+  "sleeves": "Smaug",
+  "main": [
+   {
+    "card": "HOB-19",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-24",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-32",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-34",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-35",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-39",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-42",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-43",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-51",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-52",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-55",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-57",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-58",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-59",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-145",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-146",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-162",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-186",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-218",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-240",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-292",
+    "printing": "Foil",
+    "qty": 1
+   }
+  ],
+  "spares": [
+   {
+    "card": "HOB-5",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-11",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-19",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-20",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-30",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-34",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-35",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-41",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-43",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-45",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-47",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-50",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-51",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-52",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-55",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-56",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-57",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-174",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-285",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "basics": {
+   "Island": 11,
+   "Plains": 9
+  }
+ },
+ {
+  "id": "elves",
+  "name": "Green-Blue Elves",
+  "short": "Elves",
+  "colors": [
+   "G",
+   "U"
+  ],
+  "built": false,
+  "sleeves": "Gollum",
+  "main": [
+   {
+    "card": "HOB-37",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-37",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-39",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-48",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-48",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-118",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-120",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-120",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-121",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-124",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-125",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-125",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-127",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-127",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-129",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-135",
+    "printing": "Normal",
+    "qty": 3
+   },
+   {
+    "card": "HOB-136",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-139",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-142",
+    "printing": "Normal",
+    "qty": 4
+   },
+   {
+    "card": "HOB-160",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-163",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-166",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-168",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-181",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-182",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-182",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-184",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-184",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-213",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-233",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-306",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "spares": [
+   {
+    "card": "HOB-35",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-36",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-38",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-51",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-55",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-58",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-116",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-120",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-124",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-125",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-127",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-129",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-131",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-132",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-138",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-139",
+    "printing": "Normal",
+    "qty": 2
+   },
+   {
+    "card": "HOB-143",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-167",
+    "printing": "Normal",
+    "qty": 1
+   }
+  ],
+  "basics": {
+   "Forest": 9,
+   "Island": 8
+  }
+ }
+]
