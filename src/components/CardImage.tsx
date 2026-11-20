@@ -1,23 +1,31 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { Card, imageUrls, Printing } from '../lib/data'
 
 /** Image with German→English fallback chain. */
 export function CardImg({ card, size = 'normal', className, eager }: { card: Card; size?: 'normal' | 'large' | 'art'; className?: string; eager?: boolean }) {
   const urls = imageUrls(card, size)
-  const [i, setI] = useState(0)
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => { setI(0); setLoaded(false) }, [card.id, size])
+  const [fail, setFail] = useState<{ id: string; i: number }>({ id: card.id, i: 0 })
+  const i = fail.id === card.id ? fail.i : 0
+  const src = urls[Math.min(i, urls.length - 1)]
+  // "loaded" is tied to the exact src, so a cached image that fires onLoad before effects run still shows.
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null)
+  const ref = useCallback((el: HTMLImageElement | null) => {
+    if (el && el.complete && el.naturalWidth > 0) setLoadedSrc(src)
+  }, [src])
+  const loaded = loadedSrc === src
   return (
     <img
+      ref={ref}
+      key={src}
       className={`${className || ''} ${loaded ? 'is-loaded' : ''}`}
-      src={urls[Math.min(i, urls.length - 1)]}
+      src={src}
       alt={card.name}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
       draggable={false}
-      onLoad={() => setLoaded(true)}
-      onError={() => setI((x) => (x < urls.length - 1 ? x + 1 : x))}
+      onLoad={() => setLoadedSrc(src)}
+      onError={() => setFail({ id: card.id, i: i < urls.length - 1 ? i + 1 : i })}
     />
   )
 }
