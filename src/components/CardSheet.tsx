@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, useDragControls } from 'framer-motion'
-import { Card, deName, deText, deType, LOCATION_LABEL, price, Printing, versionLabel, whereIs, byId, decks } from '../lib/data'
+import { Card, deckRoles, COLOR_HEX, deName, deText, deType, LOCATION_LABEL, price, Printing, versionLabel, whereIs, byId, decks } from '../lib/data'
 import { Mana, RulesText } from '../lib/mana'
 import { Ambient } from './Ambient'
 import { HoloCard } from './CardImage'
@@ -14,6 +14,7 @@ export function CardSheet({ card, printing, onClose }: { card: Card; printing: P
   const total = versions.reduce((a, v) => a + v.qty, 0)
   const text = deText(card)
   const eur = price(card, printing)
+  const roles = deckRoles(card)
   const drag = useDragControls()
   const startDrag = (e: React.PointerEvent) => drag.start(e)
   return (
@@ -51,6 +52,23 @@ export function CardSheet({ card, printing, onClose }: { card: Card; printing: P
             {!versions.length && <li className="muted">Not in your collection yet.</li>}
           </ul>
           {PLANNED[card.name] && <p className="muted">Also on the list for the {PLANNED[card.name]}.</p>}
+          {roles.length > 0 && (
+            <section className="roles" aria-label="How this card plays in your decks">
+              <h3 className="sheet-h">In your decks</h3>
+              {roles.map((r) => (
+                <article key={r.deck.id + r.part} className="role-card" style={{ ['--c1' as any]: COLOR_HEX[r.deck.colors[0]], ['--c2' as any]: COLOR_HEX[r.deck.colors[1]] }}>
+                  <header className="role-head">
+                    <span className="role-deck">{r.deck.short}</span>
+                    <span className="role-tag">{r.part === 'main' ? `${r.qty}× in the deck` : `${r.qty}× in the spares`}{r.deck.built ? '' : ', not built yet'}</span>
+                  </header>
+                  {r.role && <p className="role-text">{r.role}</p>}
+                  {r.play && (<><h4 className="role-sub">How to play it</h4><p className="role-text">{r.play}</p></>)}
+                  {r.swap && <p className="role-text">{r.swap}</p>}
+                  <details className="role-plan"><summary>Deck plan</summary><p>{r.plan}</p></details>
+                </article>
+              ))}
+            </section>
+          )}
           <p className="muted small">Illustrated by {card.artist || 'unknown'}{eur ? ` · about €${eur.toFixed(2)} on Scryfall` : ''}</p>
         </div>
       </motion.article>

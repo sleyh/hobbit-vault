@@ -1,0 +1,557 @@
+{
+ "dwarves": {
+  "plan": "Aggro. Get three artifacts, legends or Sagas out by turn 3 to switch on Storied, suit up your Dwarves and attack every turn before the opponent's big creatures and board wipes arrive.",
+  "main": {
+   "Belladonna Took": {
+    "role": "Card engine for your tokens: Treasures, Axes, Dwarf tokens and Soldiers all count.",
+    "play": "Play her before a turn that makes two tokens (Dori plus a Blacksmith, or At the Door) so the second token draws you a card."
+   },
+   "Celebrate the Mountain-king": {
+    "role": "Removal that also filters your hand and can leave a Soldier token.",
+    "play": "Hold it for the opponent's best permanent, ideally a Pest engine like Dina or a big Daemogoth. Discard an extra land to the recruit."
+   },
+   "Dáin, Lord of the Iron Hills": {
+    "role": "Cheap legend for Storied that taxes the opponent's attacks.",
+    "play": "Turn-2 play. Once Storied is on, every attacker costs them 1 mana, which slows Pest swarms."
+   },
+   "Ori, Keeper of Songs": {
+    "role": "Efficient 3-drop that becomes a 4/3 vigilance attacker with Storied.",
+    "play": "Play after you have two other artifacts or legends out so he attacks as a 4/3 right away."
+   },
+   "The Queen of Dale": {
+    "role": "Cheap legend that punishes the opponent's spells with recruit.",
+    "play": "Play early. She counts for Storied and draws you through your deck whenever they cast removal or a board wipe."
+   },
+   "Stone by Sunlight": {
+    "role": "Instant answer to a big creature, or protection for your best attacker.",
+    "play": "Keep 2 mana up on their turn: kill a creature with power 4 or more, or make your Thorin indestructible against a wipe."
+   },
+   "Burn, Burn, Tree and Fern": {
+    "role": "Saga removal: 6 damage, then kills an artifact, then ramps you.",
+    "play": "Cast it when they have a real target. It counts as a Saga for Storied, and chapters III and IV give red mana for Smaug or Thorin, Mountain-king."
+   },
+   "Dáin Ironfoot": {
+    "role": "Gives every equipped attacker double strike.",
+    "play": "Play him with an Axe already on board, then attack with everything equipped. Blacksmith with an Axe hits for 4 double strike."
+   },
+   "Dori, Bearer of Friends": {
+    "role": "3-drop that brings a Treasure.",
+    "play": "Play Dori before Smaug the Magnificent: her Treasure makes Smaug's attack deal extra damage and ramps you a turn ahead."
+   },
+   "The Misty Mountains Cold": {
+    "role": "Makes a Treasure every turn and can turn into a 6/6 flying Dragon.",
+    "play": "Best on turn 3 with Dori or Smaug out. The Treasures also count for Storied and fuel Smaug's attack trigger."
+   },
+   "Pinecone Strike": {
+    "role": "Cheap instant removal that exiles, or kills a Pest or Treasure token.",
+    "play": "Use it on blockers before combat, or choose both modes to kill a creature and a token at once."
+   },
+   "Smaug the Magnificent": {
+    "role": "Your finisher: 4/3 flying haste that grows his damage with every Treasure.",
+    "play": "Play him on turn 4 after Dori or Misty Mountains Cold. He makes a Treasure each upkeep, so every attack hits harder."
+   },
+   "Thorin, Mountain-king": {
+    "role": "Moves all your Equipment onto one creature and fights with it.",
+    "play": "Cast him when you have two or more Equipment out: stack them on your biggest Dwarf, which then deals that much damage to their best blocker."
+   },
+   "Dwarven Mattock": {
+    "role": "+2/+2 and ward 1, auto-attached to a Dwarf for 2 mana.",
+    "play": "Cast it right after a Dwarf. It makes the Lonely Mountain cheaper and counts as an artifact for Storied."
+   },
+   "Key to the Side-Door": {
+    "role": "Makes your biggest attacker unblockable, or turns spare legends into cards.",
+    "play": "Use it on the creature carrying the Equipment. Discard a second copy of a legend you already have out to draw two."
+   },
+   "My Precious": {
+    "role": "Hexproof and unblockable on one creature.",
+    "play": "Put it on your best double-strike attacker when they have blockers or targeted removal. The other half needs black mana, so ignore it."
+   },
+   "Thrór's Map": {
+    "role": "Legendary artifact that finds a land and smooths your draws.",
+    "play": "Turn-2 play when you need a land or Storied pieces. Later, loot away extra lands for gas."
+   },
+   "Iron Hills": {
+    "role": "Dual land that can grow a Dwarf by +2 late in the game.",
+    "play": "Play it on turns where it entering tapped costs nothing. Late game, sacrifice it for two counters on your biggest Dwarf."
+   },
+   "The Lonely Mountain": {
+    "role": "Mountain that makes 2/2 Dwarves, cheaper per Equipment.",
+    "play": "Play it after your first Equipment so it enters untapped. With 2 to 3 Equipment out, make a Dwarf every turn."
+   },
+   "Thorin Oakenshield": {
+    "role": "Turn-2 attacker that gives your whole board ward 1 with Storied.",
+    "play": "Your best turn-2 play. Ward 1 taxes the opponent's removal on everything you control."
+   },
+   "Dáin's Company": {
+    "role": "2-drop with lifelink that digs for a Dwarf or Equipment.",
+    "play": "Play it on turn 2 when you lack a 3-drop. Take an Equipment if you have Dwarves, otherwise a Dwarf."
+   },
+   "Iron Hills Blacksmith": {
+    "role": "Double-strike 1/1 that brings an Axe.",
+    "play": "Turn-2 play that adds an Equipment for the Lonely Mountain. Equip the Axe to the Blacksmith itself for 4 damage."
+   },
+   "Sting, Bilbo's Sword": {
+    "role": "Flash Equipment that grows with the opponent's creature count.",
+    "play": "Flash it in on their end step or during combat when they have many Pests. Each of their creatures adds +1/+0."
+   },
+   "Glóin the Mighty": {
+    "role": "Pest sweeper first, 4/3 ramp creature later.",
+    "play": "Cast Easy Pickings to kill all their 1-toughness Pests, then cast Glóin from exile. He adds two red mana every turn."
+   },
+   "Fíli the Pathfinder": {
+    "role": "Anthem with Storied and a token engine for every nontoken Dwarf.",
+    "play": "Play him before your other Dwarves so each later Dwarf brings a 2/2 token, which also triggers Belladonna."
+   },
+   "Kíli the Resourceful": {
+    "role": "Card draw for every Dwarf or Equipment and free equipping.",
+    "play": "Turn-2 play. With Storied, equip for free once a turn, which saves you 2 to 3 mana each turn."
+   },
+   "An Unexpected Party": {
+    "role": "Either a wave of Dwarf tokens or +2/+2 for all Dwarves.",
+    "play": "Early, cast At the Door for X Dwarves. Later, cast the enchantment from exile naming Dwarf to pump the whole team."
+   },
+   "Dwalin, Weaponmaster": {
+    "role": "First striker that permanently pumps all your Equipment.",
+    "play": "Play him once two or more Equipment are out. Every attack adds another +1/+0 to each Equipment."
+   }
+  },
+  "spares": {
+   "Kíli the Resourceful": "Swap in for Dáin's Company when you want more card draw from Equipment.",
+   "Ori, Keeper of Songs": "Swap in for a Belladonna Took if their removal keeps killing your 2-drops.",
+   "Settle the Wreckage": "Swap in against big-creature decks that attack with everything at once.",
+   "Thorin's Last Stand": "Swap in when they rely on artifacts or enchantments, or you need a finishing pump.",
+   "Burn, Burn, Tree and Fern": "Swap in a third copy when they play several big creatures.",
+   "Dáin Ironfoot": "Swap in a third copy if you are drawing lots of Equipment.",
+   "Dori, Bearer of Friends": "Swap in a third copy to make Smaug more reliable.",
+   "Gundabad Opportunist": "Swap in for My Precious when you need more card flow.",
+   "Óin the Brave": "Swap in when you keep running out of cards; he loots and gets haste with Storied.",
+   "Ragged Short Spear": "Swap in for Key to the Side-Door when you need card draw plus an Equipment.",
+   "Smaug, the Great Calamity": "Swap in when you need big removal: Spew Flame first, a 5/5 flyer later.",
+   "Bifur, Melodic Rider": "Swap in for a slower game; with Storied he doubles every Dwarf trigger.",
+   "The Black Arrow": "Swap in against Dragons or flyers.",
+   "Dwarven Mattock": "Swap in a third Mattock when targeted removal is the problem.",
+   "Sting, Bilbo's Sword": "Swap in against token swarms like Pests.",
+   "Thorin Oakenshield": "Normal copy; your special version is in the deck.",
+   "Bofur, Reliable Guardian": "Swap in to protect a key creature from a board wipe with Concerted Care.",
+   "Balin, Loremaster": "Swap in for My Precious to refill your hand late and deal damage with Storied.",
+   "Dwalin, Weaponmaster": "Second copy for decks heavy on Equipment."
+  }
+ },
+ "wolves": {
+  "plan": "Midrange. Trade early with deathtouch Wolves and cheap removal, then take over with creatures of power 4 or more. Ferocious triggers, Wolf tokens and card draw win the long game.",
+  "main": {
+   "Bilbo's Deadly Slice": {
+    "role": "Unconditional instant removal.",
+    "play": "Save it for threats you can't beat in combat, like a big Daemogoth or Dina."
+   },
+   "Gnashing of Teeth": {
+    "role": "Exile removal or a mini sweeper against tokens.",
+    "play": "Use -1/-1 to wipe a board of 1/1 Pests, or -5/-5 to exile a recursive creature."
+   },
+   "Head of the Hunt": {
+    "role": "Flash 4/3 that exiles their dying creatures and makes Wolves.",
+    "play": "Flash it in before you cast removal or block. Every creature of theirs that dies afterwards becomes a 2/2 Wolf for you and can't come back."
+   },
+   "The Master of Lake-town": {
+    "role": "Deathtouch blocker that mills on every life loss.",
+    "play": "A good turn-3 wall. Holds off bigger attackers while your other cards set up."
+   },
+   "Ravening Warg": {
+    "role": "Deathtouch 2-drop that gains life with Ferocious.",
+    "play": "Play early to trade with anything. Attack once you control a 4-power creature to gain 2 life."
+   },
+   "Reverent Howl": {
+    "role": "Card draw, or a combat trick with lifelink.",
+    "play": "Draw two at the end of their turn when the board is quiet, or pump a blocker to win a fight."
+   },
+   "Bejeweled Warg": {
+    "role": "Trampling 2-drop that grows Wolves or makes Treasure.",
+    "play": "Attack when it can connect; take a Treasure early for ramp, counters later."
+   },
+   "Gigantic Big Bear": {
+    "role": "Hexproof haste 10/7 finisher.",
+    "play": "Cast it when they're tapped out or low on blockers. It can't be countered and dodges targeted removal."
+   },
+   "Old Fat Spider": {
+    "role": "6/7 reach wall that draws when targeted.",
+    "play": "Turn-6 play that stops flyers and turns on Ferocious for every Wolf."
+   },
+   "Quarrel": {
+    "role": "Cheap one-sided fight removal.",
+    "play": "Point your biggest creature at their best one. After Duskwatch Hunter's counter, a 4-power Wolf kills most things."
+   },
+   "Wargling": {
+    "role": "2-drop that gives your whole team trample with Ferocious.",
+    "play": "Attack with it alongside a 4-power creature so every attacker tramples over chump blockers."
+   },
+   "The Chief Warg": {
+    "role": "Card engine: draws a card every attack with Ferocious.",
+    "play": "Play once you have a 4-power creature. Attack every turn to draw, even with just one attacker."
+   },
+   "Chief Warg's Company": {
+    "role": "5/3 trample that makes a Wolf every upkeep.",
+    "play": "Play it early so the Wolves pile up. It can attack once you have two other Wolves."
+   },
+   "Duskwatch Hunter": {
+    "role": "3-drop that turns on Ferocious.",
+    "play": "On turn 3, put the counter on itself for a 4/2 that tokens can't block, or on another Wolf to make it 4 power."
+   },
+   "Large Bear": {
+    "role": "5/5 reach, trample, haste.",
+    "play": "Hits immediately and turns on Ferocious the turn it lands."
+   },
+   "Tom, Bert, and William": {
+    "role": "5/5 card engine that comes back as an artifact.",
+    "play": "Sacrifice a Wolf token or a creature about to die in response to removal to draw cards."
+   },
+   "Mirkwood": {
+    "role": "Dual land that can grow a Wolf, Bear or Spider by +2.",
+    "play": "Late game, sacrifice it to make a Wolf 4 power and switch on Ferocious."
+   },
+   "Rhovanion Rampager": {
+    "role": "Attacker that eats your creatures to grow.",
+    "play": "Sacrifice a Wolf token or a doomed creature on attack. When it dies you get a Goblin Army that big."
+   }
+  },
+  "spares": {
+   "Gollum, Silent Slinker": "Swap in when you need a menace attacker or small life gain.",
+   "Gollum the Abandoned": "Swap in against graveyard recursion like Bloodghast.",
+   "The Master of Lake-town": "Swap in a second copy against aggro decks.",
+   "Nighthowl Pursuer": "Swap in for a faster start; it hits for 3 with Ferocious.",
+   "Ravening Warg": "Fifth deathtouch body; swap in against big creatures.",
+   "Attercop": "Swap in against flyers; reach and deathtouch.",
+   "Beorn, Reluctant Host": "Swap in for a 5-mana 5/5 trample that turns on Ferocious.",
+   "Galion, Elvenking's Butler": "Swap in as an extra 4-power creature for Ferocious.",
+   "Gigantic Big Bear": "Swap in a second copy for slower matchups.",
+   "Little Bear": "Swap in for a flash blocker or surprise attacks.",
+   "Old Fat Spider": "Swap in a second copy against flyers.",
+   "Ordinary Bear": "Swap in for a cheap 4/5 that turns on Ferocious.",
+   "Quarrel": "Fifth removal spell when you face many creatures.",
+   "Troll Negotiations": "Swap in for removal that also grows your creature.",
+   "Warg Tactics": "Swap in against flyers or targeted removal.",
+   "Wargling": "Fourth copy for more trample turns.",
+   "Part in Friendship": "Swap in against board wipes; creatures you lose get replaced."
+  }
+ },
+ "goblins": {
+  "plan": "Removal and Amass. Kill everything that matters, keep feeding counters to one Goblin Army, and let The Great Goblin and Bolg turn those counters into damage.",
+  "main": {
+   "Bilbo's Deadly Slice": {
+    "role": "Unconditional instant removal.",
+    "play": "Kill their engine creature at the end of their turn, or a blocker before Bolg attacks."
+   },
+   "Gnashing of Teeth": {
+    "role": "Exile removal, or -1/-1 to sweep Pests.",
+    "play": "Use the sweeper mode when they have three or more 1/1 tokens; your Army survives."
+   },
+   "Gollum the Abandoned": {
+    "role": "Graveyard hate, 2 life loss, and a reusable sac outlet.",
+    "play": "Play him when their graveyard has a Bloodghast or similar. Later return him by sacrificing a token."
+   },
+   "Stir Up Trouble": {
+    "role": "1-mana removal that sacrifices a token or creature.",
+    "play": "Sacrifice a Treasure, a Flunkies or a dying creature. It feeds The Great Goblin's card draw."
+   },
+   "Bothersome Noisemaker": {
+    "role": "Grows your Army with every noncreature spell.",
+    "play": "Play it early. Each removal spell afterwards also adds a counter to the Army."
+   },
+   "Goblin-town Flunkies": {
+    "role": "Haste 1/1 that starts or grows the Army.",
+    "play": "Turn-2 play. Later it's sacrifice food for Stir Up Trouble or Bolg."
+   },
+   "Misty Mountains Raider": {
+    "role": "4/4 that adds two Army counters every attack.",
+    "play": "Play before The Great Goblin is out; every attack then also pings them for 2."
+   },
+   "Tidings of War": {
+    "role": "Cheap Army growth, again from the graveyard.",
+    "play": "Cast it early for 1 counter, then flash it back late for 3."
+   },
+   "Bolg of the North": {
+    "role": "5/5 removal: sacrifice a creature to deal its power in damage.",
+    "play": "Sacrifice your Army for big damage on their best creature; excess damage comes back as a new Army."
+   },
+   "Bolg's Company": {
+    "role": "Haste 2/2 that turns spare Goblins into mana.",
+    "play": "Sacrifice a Flunkies for two mana to cast Bolg or Smaug a turn early."
+   },
+   "Goblin Plate Mail": {
+    "role": "Grows the Army and gives it menace.",
+    "play": "Cast it once you have an Army so it gets +1/+0 and menace right away."
+   },
+   "Smaug, Wicked Worm": {
+    "role": "5/5 flyer that draws when you spend Treasure.",
+    "play": "Best after The Sackville-Bagginses made a Treasure; spend it on your next spell to draw."
+   },
+   "Goblin-town": {
+    "role": "Dual land that can grow a Goblin by +2.",
+    "play": "Late game, sacrifice it to grow the Army and trigger The Great Goblin."
+   },
+   "Rage into the Valley": {
+    "role": "Draws a card and adds two Army counters.",
+    "play": "Cast it with The Great Goblin out for 2 damage plus the card."
+   },
+   "The Great Goblin": {
+    "role": "Turns every Army counter into 2 damage.",
+    "play": "Play him before your Amass spells so each one also pings the opponent."
+   },
+   "Gandalf, Spark Starter": {
+    "role": "6-mana 4/3 reach that kills up to three small creatures.",
+    "play": "Split the 3 damage to wipe Pests or finish off damaged creatures."
+   },
+   "Dreaded Bat-Cloud": {
+    "role": "Cheap flying deathtouch after any creature died.",
+    "play": "Cast it for 2 mana right after removal or a sacrifice."
+   },
+   "Azog, Moria's Ruin": {
+    "role": "Removal on a body.",
+    "play": "Destroy your own Flunkies to draw a card and grow your Army, or their biggest threat if it's worth giving them an Army."
+   },
+   "Glóin the Mighty": {
+    "role": "Pest sweeper, then a 4/3 ramp creature.",
+    "play": "Cast Easy Pickings to kill their 1-toughness tokens, then Glóin from exile for extra red mana."
+   },
+   "The Sackville-Bagginses": {
+    "role": "Sac outlet that draws a card and drains on every token you sacrifice.",
+    "play": "Sacrifice a token or a doomed creature on entry for a card and a Treasure."
+   }
+  },
+  "spares": {
+   "Crude Bent Blade": "Swap in against hexproof creatures; it makes them sacrifice.",
+   "Down, Down to Goblin-town": "Swap in to strip their best card from hand before it hits the table.",
+   "Front Porch Sentries": "Swap in for cheap blockers that weaken attackers when they die.",
+   "Gathering of Darkness": "Swap in for longer games; it returns a creature and adds 3 Army counters.",
+   "Gnashing of Teeth": "Second copy against token decks.",
+   "Gollum the Abandoned": "Second copy against heavy graveyard decks.",
+   "Great Ugly-Looking Goblin": "Swap in to give all your countered creatures menace.",
+   "Stony-Voiced Goblins": "Swap in for early discard.",
+   "Supper for Spiders": "Swap in when big fights happen; steal their dead creatures as Food.",
+   "Desert Were-Worm": "Swap in for a huge Mountain-powered finisher.",
+   "Desolation of Smaug": "Swap in against wide boards; it spares your Dragons.",
+   "Pinecone Strike": "Swap in for cheap removal that also kills tokens.",
+   "Snowslope Hunter": "Swap in for card advantage from sacrificed tokens.",
+   "Tidings of War": "Second copy for more Army growth.",
+   "Fearsome Goblin Pair": "Swap in as a blocker that leaves 4 Army counters when it dies.",
+   "Along the Crooked Way": "Swap in for longer games; it rebuys a creature and grants menace."
+  }
+ },
+ "humans": {
+  "plan": "Tempo and card draw. Draw your second card every turn to grow Bard, the Apothecaries and the Flock, hold counterspells for board wipes and win in the air.",
+  "main": {
+   "Lake-town Toymaker": {
+    "role": "4-toughness body that gives +3/+0 and first strike after you draw two.",
+    "play": "Draw your second card before combat (Plunder, Bilbo, recruit) so its trigger pumps your best attacker."
+   },
+   "The Queen of Dale": {
+    "role": "Recruits whenever the opponent casts a noncreature spell.",
+    "play": "Play early; she turns their removal into extra cards and Soldiers."
+   },
+   "Bilbo, Luckwearer": {
+    "role": "Unblockable 1/1 that loots on every hit.",
+    "play": "Turn-2 play. Every connect counts as a second draw for Bard and the Apothecary."
+   },
+   "Bilbo Baggins, Burglar": {
+    "role": "3-drop that draws on entry, or Scry 2.",
+    "play": "Cast Take a Glance on turn 1 to set up, then Bilbo himself later from exile."
+   },
+   "Confusticate and Bebother": {
+    "role": "Soft counterspell or draw two.",
+    "play": "Hold it up for their board wipe; if they don't cast one, draw two at end of turn."
+   },
+   "Enchanted River's Grasp": {
+    "role": "Locks down a creature and wipes its counters.",
+    "play": "Put it on their biggest threat or the creature carrying counters."
+   },
+   "Great Gilded Boat": {
+    "role": "4/4 vehicle that recruits every attack.",
+    "play": "Crew it with a Soldier token or Bilbo; each attack draws, discards and may add a Soldier."
+   },
+   "Lakeshore Apothecary": {
+    "role": "Grows +1/+1 every turn you draw two cards.",
+    "play": "Play on turn 2 and keep drawing your second card every turn."
+   },
+   "Plunder the Trollshaws": {
+    "role": "Instant draw, flashback for two more.",
+    "play": "Cast it on their turn for your second draw; flash it back later for two cards."
+   },
+   "Ravenhill Flock": {
+    "role": "Flyer that grows with every card you draw.",
+    "play": "Play it before a draw-heavy turn; it quickly outgrows their blockers in the air."
+   },
+   "Sound the Trumpets": {
+    "role": "Hard counterspell that recruits on cheap targets.",
+    "play": "Save it for a board wipe or their best creature."
+   },
+   "Uncover the Moon-Letters": {
+    "role": "Draw engine for noncreature spells.",
+    "play": "Play when you have counterspells and draw spells in hand; each cast refills you."
+   },
+   "Uneasy Partings": {
+    "role": "Removal that puts a creature into their library.",
+    "play": "Cast it on an attacker for 1 less; it beats indestructible and recursion."
+   },
+   "Wizard's Staff": {
+    "role": "Doubles the equipped creature's triggers.",
+    "play": "Put it on Bard the Bowman or Bard's Company to double their trigger."
+   },
+   "Bard the Bowman": {
+    "role": "Your payoff: a +1/+1 counter and lifelink every second draw.",
+    "play": "Play before your draw spells; with Wizard's Staff he puts out two counters a turn."
+   },
+   "Bard's Company": {
+    "role": "Anthem with flash that recruits on entry and attack.",
+    "play": "Flash it in at the end of their turn when you control a Human."
+   },
+   "Patient Instructor": {
+    "role": "Vigilance 3-drop that recruits on entry.",
+    "play": "Play it when you need a body and a second draw in the same turn."
+   },
+   "Lake-town": {
+    "role": "Dual land that can grow a Human by +2.",
+    "play": "Late game, sacrifice it for two counters on Bard."
+   },
+   "The Lord of the Eagles": {
+    "role": "Flash 8/8 flyer, cheaper per flyer you control.",
+    "play": "With Ravenhill Flocks out it costs very little; flash it in on their end step."
+   },
+   "Riddles in the Dark": {
+    "role": "Card advantage that lets them pick a pile.",
+    "play": "Cast at the end of their turn; either pile gives you two cards."
+   }
+  },
+  "spares": {
+   "Bilbo's Gambit": "Swap in for a cheap answer to a big spell or a combo turn.",
+   "Eagle of the Great Shelf": "Swap in for another flyer that hits hard with a wide board.",
+   "Lake-town Toymaker": "Third copy for more pressure.",
+   "Magnificent End": "Swap in for cheap removal on a tapped creature.",
+   "Velvetwing Butterflies": "Swap in for a flyer or a tapper on an alpha strike.",
+   "Bilbo Baggins, Burglar": "Fourth copy for more card flow.",
+   "Confusticate and Bebother": "Third copy against board-wipe decks.",
+   "Gandalf, Wandering Wizard": "Swap in for a big warded body that can refill your hand.",
+   "Lakeshore Apothecary": "Third copy for a faster start.",
+   "Long Lake Nuisance": "Swap in for a flyer that recruits on entry.",
+   "Master's Councillors": "Swap in for a mill plan against slow decks.",
+   "Old Fat Spider Can't See Me": "Swap in to protect Bard from removal and draw two.",
+   "Plunder the Trollshaws": "Second copy for more instant draw.",
+   "Ravenhill Flock": "Third copy for more flyers.",
+   "Sound the Trumpets": "Third copy against heavy spell decks.",
+   "Thranduil's Decree": "Swap in to counter a bomb and cast it yourself.",
+   "Uncover the Moon-Letters": "Second copy for a pure draw plan.",
+   "Glamdring, Foe-hammer": "Swap in to make your spells cheaper with a big equipped creature."
+  }
+ },
+ "elves": {
+  "plan": "Ramp and Landfall. Play extra lands every turn, let each land drop grow your Elves and make tokens, then finish with big Landfall turns.",
+  "main": {
+   "Elven Raft-Steerer": {
+    "role": "Taps a blocker or untaps your creature on every land drop.",
+    "play": "Play before your land for the turn so the trigger taps their best blocker."
+   },
+   "Enchanted River's Grasp": {
+    "role": "Locks down their best creature.",
+    "play": "Use on a creature you can't fight with Quarrel."
+   },
+   "Mirkwood Meditator": {
+    "role": "2/4 blocker that becomes a 4/2 attacker on land drops.",
+    "play": "Block on their turn, then play a land on yours and attack as a 4/2."
+   },
+   "Beorn, Reluctant Host": {
+    "role": "Extra land drop now, a 5/5 trampler later.",
+    "play": "Cast Till and Tend early for an extra Landfall turn, then Beorn from exile."
+   },
+   "Beorn's Hospitality": {
+    "role": "A +1/+1 counter on every land drop, later a big Bear.",
+    "play": "Play it before your land drops; in the late game turn it into a Bear as big as your land count."
+   },
+   "Boughside Wanderers": {
+    "role": "Finds a permanent and swings big on land drops.",
+    "play": "Play it then a land in the same turn so it attacks as a 6/6."
+   },
+   "Down in the Valley": {
+    "role": "Finds a land, then makes an Elf per land drop.",
+    "play": "Turn-3 play: chapter I finds a land, chapter II makes tokens."
+   },
+   "Galion, Elvenking's Butler": {
+    "role": "4/4 that copies its size onto another attacker.",
+    "play": "Attack with Galion and an Elf token; the token becomes a 4/4."
+   },
+   "Guardian of the Halls": {
+    "role": "Cheap trampler with a late-game mana sink.",
+    "play": "Turn-2 play; later pump it with spare mana."
+   },
+   "Mirkwood Pathmaker": {
+    "role": "Grows with every land you control.",
+    "play": "Gets bigger every turn; best after extra land drops."
+   },
+   "Quarrel": {
+    "role": "Cheap one-sided fight removal.",
+    "play": "Point a Landfall-pumped creature at their threat after your land drop."
+   },
+   "Radagast of Rhosgobel": {
+    "role": "Makes your first creature each turn 2 cheaper and flash.",
+    "play": "Play him early; then cast creatures on their end step."
+   },
+   "Warg Tactics": {
+    "role": "Kills a flyer, or protects and pumps your creature.",
+    "play": "Hold it up for their removal or flying threats."
+   },
+   "Wood Elves": {
+    "role": "Puts a Forest onto the battlefield: ramp plus a Landfall trigger.",
+    "play": "Turn-3 play; every Landfall card on board triggers from its Forest."
+   },
+   "Mirkwood Nurturer": {
+    "role": "Bounces a land to replay it for another Landfall.",
+    "play": "Return a tapped land, then replay it as your land drop for a second trigger."
+   },
+   "Silvan Reveler": {
+    "role": "Loots on entry and puts a discarded land into play.",
+    "play": "Discard a land to ramp; it can come back from your graveyard with Landfall."
+   },
+   "Thranduil, Sindarin Liege": {
+    "role": "Elf anthem that makes an Elf token on each land drop.",
+    "play": "Play before your land drops for the most tokens."
+   },
+   "Thranduil's Company": {
+    "role": "Extra land drop each turn and two counters per land.",
+    "play": "Play it with another Elf out to play two lands a turn."
+   },
+   "Elven Passage": {
+    "role": "Fetches a basic, untapped if you show an Elf.",
+    "play": "Crack it for an extra Landfall trigger."
+   },
+   "Elvenking's Halls": {
+    "role": "Dual land that can grow an Elf by +2.",
+    "play": "Late game, sacrifice it for counters on your best Elf."
+   },
+   "Hobbit Hole": {
+    "role": "Fetches a basic for an extra Landfall trigger.",
+    "play": "Crack it the turn you have the most Landfall cards out."
+   },
+   "Cantankerous Keepers": {
+    "role": "Card advantage that gets cheaper per Elf.",
+    "play": "Cast it once you have three Elves for a 2-mana refill."
+   }
+  },
+  "spares": {
+   "Confusticate and Bebother": "Swap in against board wipes.",
+   "Elrond, Moon-Reader": "Swap in for card draw from activated abilities.",
+   "Elvenking's Harper": "Swap in to make a big attacker unblockable late.",
+   "Plunder the Trollshaws": "Swap in for instant card draw.",
+   "Sound the Trumpets": "Swap in against heavy spell decks.",
+   "Uneasy Partings": "Swap in for removal that beats indestructible.",
+   "Attercop": "Swap in against flyers.",
+   "Beorn's Hospitality": "Third copy for more counters.",
+   "Down in the Valley": "Second copy for more tokens.",
+   "Galion, Elvenking's Butler": "Third copy for more big attacks.",
+   "Guardian of the Halls": "Third copy for a faster start.",
+   "Mirkwood Pathmaker": "Second copy for a land-count beater.",
+   "The Notary Hobbits": "Swap in for big ramp.",
+   "Old Fat Spider": "Swap in for a big reach blocker.",
+   "Troll Negotiations": "Swap in for removal that grows your creature.",
+   "Warg Tactics": "More protection against removal.",
+   "Woodland Weavemaster": "Swap in for Elf-only mana ramp.",
+   "Thranduil, the Elvenking": "Needs black mana; only with a splash."
+  }
+ }
+}

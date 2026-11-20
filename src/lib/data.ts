@@ -2,6 +2,7 @@ import cardsRaw from '../data/cards.json'
 import copiesRaw from '../data/copies.json'
 import decksRaw from '../data/decks.json'
 import sf from '../data/scryfall.json'
+import guidesRaw from '../data/guides.json'
 
 export type Color = 'W' | 'U' | 'B' | 'R' | 'G'
 export type Printing = 'Normal' | 'Foil' | 'Surge Foil'
@@ -86,3 +87,21 @@ export function signature(d: Deck, n = 3) {
     .slice(0, n)
 }
 export const sortedForCode = (e: Entry) => `${byId[e.card].set}${String(byId[e.card].num).padStart(3, '0')}`
+
+interface Guide { plan: string; main: Record<string, { role: string; play: string }>; spares: Record<string, string> }
+const guides = guidesRaw as unknown as Record<string, Guide>
+/** How this card is used in each deck that runs it (main deck or spare pile). */
+export function deckRoles(c: Card) {
+  const out: { deck: Deck; part: 'main' | 'spares'; role?: string; play?: string; swap?: string; plan: string; qty: number }[] = []
+  for (const d of decks) {
+    const g = guides[d.id]
+    if (!g) continue
+    for (const part of ['main', 'spares'] as const) {
+      const qty = d[part].filter((e) => byId[e.card].name === c.name).reduce((a, e) => a + e.qty, 0)
+      if (!qty) continue
+      if (part === 'main' && g.main[c.name]) out.push({ deck: d, part, ...g.main[c.name], plan: g.plan, qty })
+      if (part === 'spares' && g.spares[c.name]) out.push({ deck: d, part, swap: g.spares[c.name], plan: g.plan, qty })
+    }
+  }
+  return out
+}

@@ -226,3 +226,19 @@ select.chip-btn { appearance: none; color: var(--accent); }
 .menu li + li button { border-top: 0.5px solid var(--sep); }
 .menu li button:active { background: rgba(255,255,255,.08); }
 .menu-scrim { position: fixed; inset: 0; z-index: 29; cursor: default; }
+
+/* ---------- deck roles on card details ---------- */
+.roles { display: grid; gap: 10px; }
+.roles .sheet-h { margin-bottom: 0; }
+.role-card { position: relative; padding: 14px 16px 12px; border-radius: 14px; background: var(--fill); overflow: hidden; }
+.role-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 100%; background: linear-gradient(110deg, color-mix(in srgb, var(--c1) 22%, transparent), color-mix(in srgb, var(--c2) 12%, transparent) 55%, transparent 80%); pointer-events: none; }
+.role-card > * { position: relative; }
+.role-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.role-deck { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+.role-tag { font-size: 13px; color: var(--label2); font-variant-numeric: tabular-nums; }
+.role-sub { margin: 10px 0 2px; font-size: 13px; font-weight: 600; color: var(--label2); }
+.role-text { margin: 0; font-size: 16px; line-height: 1.42; max-width: 62ch; }
+.role-plan { margin-top: 10px; font-size: 14px; color: var(--label2); }
+.role-plan summary { cursor: pointer; color: var(--accent); font-weight: 500; list-style: none; }
+.role-plan summary::-webkit-details-marker { display: none; }
+.role-plan p { margin: 6px 0 0; line-height: 1.4; }
