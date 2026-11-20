@@ -71,7 +71,7 @@ export function DeckCarousel({ onOpen, start }: { onOpen: (d: Deck) => void; sta
           <span className={`chip ${deck.built ? '' : 'chip-warn'}`}>{deck.built ? `In ${deck.sleeves} sleeves` : 'Not built yet'}</span>
           <span className="chip">{deck.main.filter((e) => e.printing !== 'Normal' || byId[e.card].num > 188).reduce((a, e) => a + e.qty, 0)} foils and specials</span>
         </div>
-        <button className="cta" onClick={() => onOpen(deck)} style={{ ['--glow' as any]: COLOR_HEX[deck.colors[0]] }}>Browse the deck</button>
+        <button className="cta" onClick={() => onOpen(deck)} style={{ ['--glow' as any]: COLOR_HEX[deck.colors[0]] }}>Open deck</button>
         <div className="dots" role="tablist">
           {decks.map((d, i) => (
             <button key={d.id} role="tab" aria-selected={i === index} aria-label={d.name} className={`dot ${i === index ? 'on' : ''}`} onClick={() => go(i)}

@@ -73,7 +73,7 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
     <motion.section className="screen viewer" onPan={onPan} onPanEnd={onPanEnd}>
       <Ambient card={card} colors={card.colors.length ? card.colors : deck.colors} />
       <header className="topbar">
-        <button className="back" onClick={onBack} aria-label="Back to decks">‹</button>
+        <button className="back" onClick={onBack} aria-label="Back to decks"><svg viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2 2 10l8 8" /></svg></button>
         <span className="topbar-title">{deck.short}</span>
         <div className="seg" role="tablist">
           {(['main', 'spares'] as const).map((p) => (
@@ -92,7 +92,7 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
 
       <div className="info">
         <div className="info-row">
-          <span className="count">{index + 1}<small>/{rows.length}</small></span>
+          <span className="count">{index + 1} <small>of {rows.length}</small></span>
           <Mana cost={card.cost} size={18} />
         </div>
         <KineticTitle text={deName(card)} className="card-title" dir={dir} />
