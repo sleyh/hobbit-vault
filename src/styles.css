@@ -112,7 +112,9 @@ img { user-select: none; -webkit-user-drag: none; }
 /* ---------- card sheet ---------- */
 .sheet-wrap { position: fixed; inset: 0; z-index: 50; display: flex; align-items: flex-end; justify-content: center; }
 .sheet-wrap > .ambient { position: fixed; }
-.sheet { position: relative; z-index: 2; width: min(100%, 560px); max-height: 94vh; overflow-y: auto; padding: 8px max(20px, env(safe-area-inset-right)) calc(28px + var(--safe-b)) max(20px, env(safe-area-inset-left)); border-radius: 22px 22px 0 0; background: rgba(28, 28, 30, 0.72); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+.sheet { touch-action: pan-y; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; position: relative; z-index: 2; width: min(100%, 560px); max-height: 94vh; overflow-y: auto; padding: 8px max(20px, env(safe-area-inset-right)) calc(28px + var(--safe-b)) max(20px, env(safe-area-inset-left)); border-radius: 22px 22px 0 0; background: rgba(28, 28, 30, 0.72); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+.drag-zone { padding: 6px 0 4px; margin: -8px -20px 0; touch-action: none; cursor: grab; }
+.sheet-hero { touch-action: none; }
 .grabber { width: 36px; height: 5px; border-radius: 9px; background: var(--label3); margin: 0 auto 12px; }
 .close { position: absolute; top: 14px; right: 16px; width: 30px; height: 30px; border-radius: 50%; background: var(--fill); color: var(--label2); font-size: 18px; font-weight: 600; line-height: 30px; }
 .sheet-hero { width: min(68%, 290px); margin: 10px auto 22px; perspective: 900px; }
@@ -211,3 +213,15 @@ select.chip-btn { appearance: none; color: var(--accent); }
   .info, .scrubber { width: min(720px, 100% - 32px); margin-left: auto; margin-right: auto; }
   .info { padding-left: 0; padding-right: 0; }
 }
+
+/* ---------- sort menu ---------- */
+.sort { position: relative; margin-left: auto; }
+.sort + .seg { margin-left: 0; }
+.icon-btn { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--material); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+.icon-btn svg { width: 17px; height: 17px; }
+.menu { position: absolute; left: 0; top: 42px; z-index: 30; list-style: none; margin: 0; padding: 6px 0; min-width: 210px; border-radius: 14px; background: rgba(40, 40, 42, 0.82); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: 0 16px 48px rgba(0,0,0,.45); transform-origin: top left; }
+.menu-h { padding: 6px 16px 6px; font-size: 13px; color: var(--label2); }
+.menu li button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 16px; font-size: 17px; text-align: left; }
+.menu li + li button { border-top: 0.5px solid var(--sep); }
+.menu li button:active { background: rgba(255,255,255,.08); }
+.menu-scrim { position: fixed; inset: 0; z-index: 29; cursor: default; }

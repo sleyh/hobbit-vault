@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import React from 'react'
+import { motion, useDragControls } from 'framer-motion'
 import { Card, deName, deText, deType, LOCATION_LABEL, price, Printing, versionLabel, whereIs, byId, decks } from '../lib/data'
 import { Mana, RulesText } from '../lib/mana'
 import { Ambient } from './Ambient'
@@ -13,16 +14,18 @@ export function CardSheet({ card, printing, onClose }: { card: Card; printing: P
   const total = versions.reduce((a, v) => a + v.qty, 0)
   const text = deText(card)
   const eur = price(card, printing)
+  const drag = useDragControls()
+  const startDrag = (e: React.PointerEvent) => drag.start(e)
   return (
     <motion.div className="sheet-wrap" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
       <Ambient card={card} colors={card.colors} />
       <motion.article className="sheet" role="dialog" aria-label={card.name} onClick={(e) => e.stopPropagation()}
         initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 260, damping: 32 }}
-        drag="y" dragConstraints={{ top: 0, bottom: 0 }} dragElastic={{ top: 0, bottom: 0.6 }}
+        drag="y" dragListener={false} dragControls={drag} dragConstraints={{ top: 0, bottom: 0 }} dragElastic={{ top: 0, bottom: 0.6 }}
         onDragEnd={(_, i) => (i.offset.y > 120 || i.velocity.y > 600) && onClose()}>
-        <div className="grabber" />
+        <div className="drag-zone" onPointerDown={startDrag}><div className="grabber" /></div>
         <button className="close" onClick={onClose} aria-label="Close">×</button>
-        <div className="sheet-hero"><HoloCard card={card} printing={printing} eager /></div>
+        <div className="sheet-hero" onPointerDown={startDrag}><HoloCard card={card} printing={printing} eager /></div>
         <div className="sheet-body">
           <div className="info-row"><Mana cost={card.cost} size={20} /><span className={`rarity r-${card.rarity}`}>{card.rarity}</span></div>
           <h2 className="sheet-title">{deName(card)}</h2>

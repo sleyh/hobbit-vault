@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, MotionValue, useTransform } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { byId, Card, Deck, deckCount, deName, Entry, Printing, RARITY_HEX, versionLabel } from '../lib/data'
+import { byId, Card, Deck, deckCount, deName, Entry, price, Printing, RARITY_HEX, versionLabel } from '../lib/data'
 import { Mana } from '../lib/mana'
 import { useSwipe } from '../lib/useSwipe'
 import { Ambient } from './Ambient'
@@ -10,10 +10,24 @@ import { KineticTitle } from './Kinetic'
 const BASIC_ID: Record<string, string> = { Plains: 'HOB-189', Island: 'HOB-190', Swamp: 'HOB-191', Mountain: 'HOB-192', Forest: 'HOB-193' }
 type Row = Entry & { basic?: boolean }
 
-function order(d: Deck, part: 'main' | 'spares'): Row[] {
+export type SortKey = 'number' | 'rarity' | 'value' | 'cost'
+const SORTS: { id: SortKey; label: string }[] = [
+  { id: 'number', label: 'Card number' }, { id: 'rarity', label: 'Rarity' }, { id: 'value', label: 'Value' }, { id: 'cost', label: 'Mana cost' },
+]
+const RANK: Record<string, number> = { mythic: 0, rare: 1, uncommon: 2, common: 3, land: 4 }
+function order(d: Deck, part: 'main' | 'spares', sort: SortKey): Row[] {
   const rows: Row[] = [...d[part]]
-  const land = (e: Row) => byId[e.card].types.includes('Land')
-  rows.sort((a, b) => +land(a) - +land(b) || byId[a.card].cmc - byId[b.card].cmc || byId[a.card].name.localeCompare(byId[b.card].name))
+  const c = (e: Row) => byId[e.card]
+  const num = (a: Row, b: Row) => c(a).set.localeCompare(c(b).set) || c(a).num - c(b).num
+  const val = (e: Row) => price(c(e), e.printing) ?? -1
+  const land = (e: Row) => +c(e).types.includes('Land')
+  const by: Record<SortKey, (a: Row, b: Row) => number> = {
+    number: num,
+    rarity: (a, b) => RANK[c(a).rarity] - RANK[c(b).rarity] || num(a, b),
+    value: (a, b) => val(b) - val(a) || num(a, b),
+    cost: (a, b) => land(a) - land(b) || c(a).cmc - c(b).cmc || num(a, b),
+  }
+  rows.sort(by[sort])
   if (part === 'main') for (const [n, q] of Object.entries(d.basics)) rows.push({ card: BASIC_ID[n], printing: 'Normal', qty: q, basic: true })
   return rows
 }
@@ -60,9 +74,11 @@ function CurveScrubber({ rows, index, go }: { rows: Row[]; index: number; go: (i
 
 export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () => void; onCard: (c: Card, p: Printing) => void }) {
   const [part, setPart] = useState<'main' | 'spares'>('main')
-  const rows = useMemo(() => order(deck, part), [deck, part])
+  const [sort, setSort] = useState<SortKey>('number')
+  const [menu, setMenu] = useState(false)
+  const rows = useMemo(() => order(deck, part, sort), [deck, part, sort])
   const { pos, index, go, onPan, onPanEnd } = useSwipe(rows.length, Math.min(window.innerWidth, 520) * 0.42)
-  useEffect(() => { go(0) }, [part])
+  useEffect(() => { go(0) }, [part, sort])
   const row = rows[Math.min(index, rows.length - 1)]
   const card = byId[row.card]
   const [dir, setDir] = useState(1)
@@ -75,6 +91,24 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
       <header className="topbar">
         <button className="back" onClick={onBack} aria-label="Back to decks"><svg viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2 2 10l8 8" /></svg></button>
         <span className="topbar-title">{deck.short}</span>
+        <div className="sort">
+          <button className="icon-btn" aria-label="Sort cards" aria-expanded={menu} onClick={() => setMenu(!menu)}>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3v14M6 17l-3-3M6 17l3-3M14 17V3M14 3l-3 3M14 3l3 3" /></svg>
+          </button>
+          {menu && <button className="menu-scrim" aria-label="Close sort menu" onClick={() => setMenu(false)} />}
+          <AnimatePresence>
+            {menu && (
+              <motion.ul className="menu" role="menu" initial={{ opacity: 0, scale: 0.9, y: -6 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ type: 'spring', stiffness: 500, damping: 34 }}>
+                <li className="menu-h">Sort by</li>
+                {SORTS.map((o) => (
+                  <li key={o.id}><button role="menuitemradio" aria-checked={sort === o.id} onClick={() => { setSort(o.id); setMenu(false) }}>
+                    <span>{o.label}</span>{sort === o.id && <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8.5 6.5 12 13 4.5" /></svg>}
+                  </button></li>
+                ))}
+              </motion.ul>
+            )}
+          </AnimatePresence>
+        </div>
         <div className="seg" role="tablist">
           {(['main', 'spares'] as const).map((p) => (
             <button key={p} role="tab" aria-selected={part === p} className={part === p ? 'on' : ''} onClick={() => setPart(p)}>
