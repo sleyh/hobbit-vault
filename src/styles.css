@@ -242,3 +242,8 @@ select.chip-btn { appearance: none; color: var(--accent); }
 .role-plan summary { cursor: pointer; color: var(--accent); font-weight: 500; list-style: none; }
 .role-plan summary::-webkit-details-marker { display: none; }
 .role-plan p { margin: 6px 0 0; line-height: 1.4; }
+
+/* foil sweep on the card details page, same as the Cards grid */
+.sheet-hero .holo-card.is-foil::after { content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; mix-blend-mode: color-dodge; opacity: 0.32; background: linear-gradient(115deg, transparent 20%, hsl(48 95% 62%) 35%, hsl(200 90% 60%) 50%, hsl(300 80% 66%) 62%, transparent 78%); background-size: 250% 250%; animation: sweep 5s ease-in-out infinite; }
+.sheet-hero .holo-card.is-surge::after { opacity: 0.45; animation-duration: 3.5s; }
+@media (prefers-reduced-motion: reduce) { .sheet-hero .holo-card.is-foil::after { animation: none; } }
