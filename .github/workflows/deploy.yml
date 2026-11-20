@@ -1,0 +1,29 @@
+name: Deploy to Vercel
+# Deploys without Vercel's GitHub integration: needs the repo secret VERCEL_TOKEN
+# (create one at vercel.com/account/tokens). The first run creates the project "hobbit-vault".
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency: deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Check token
+        id: tok
+        run: echo "ok=${{ secrets.VERCEL_TOKEN != '' }}" >> "$GITHUB_OUTPUT"
+      - name: Deploy
+        if: steps.tok.outputs.ok == 'true'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          npx --yes vercel@39.1.1 link --yes --project hobbit-vault --token "$VERCEL_TOKEN"
+          url=$(npx --yes vercel@39.1.1 deploy --prod --yes --token "$VERCEL_TOKEN")
+          echo "Deployed: $url" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: No token yet
+        if: steps.tok.outputs.ok != 'true'
+        run: echo "Add the VERCEL_TOKEN repository secret to deploy." | tee -a "$GITHUB_STEP_SUMMARY"
