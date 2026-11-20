@@ -7,6 +7,15 @@ import { Ambient } from './Ambient'
 import { HoloCard } from './CardImage'
 import { KineticTitle } from './Kinetic'
 
+// The mechanics each deck is built around
+const ENGINES: Record<string, string[]> = {
+  dwarves: ['Storied', 'Equipment'],
+  wolves: ['Ferocious', 'Wolf tokens'],
+  goblins: ['Amass', 'Sacrifice'],
+  humans: ['Recruit', 'Second draw'],
+  elves: ['Landfall', 'Extra lands'],
+}
+
 const pipUrl = (c: string) => `https://svgs.scryfall.io/card-symbols/${c}.svg`
 
 function Fan({ deck, offset }: { deck: Deck; offset: MotionValue<number> }) {
@@ -70,7 +79,8 @@ export function DeckCarousel({ onOpen, start }: { onOpen: (d: Deck) => void; sta
         <KineticTitle text={deck.short} className="deck-title" dir={dir} />
         <p className="deck-sub">{deck.name.replace(' ' + deck.short, '')}, {deckCount(deck, 'main')} cards{spares ? ` and ${spares} spares` : ''}</p>
         <div className="deck-facts">
-          <span className={`chip ${deck.built ? '' : 'chip-warn'}`}>{deck.built ? `In ${deck.sleeves} sleeves` : 'Not built yet'}</span>
+          {(ENGINES[deck.id] || []).map((e) => <span key={e} className="chip chip-engine">{e}</span>)}
+          {!deck.built && <span className="chip chip-warn">Not built yet</span>}
           <span className="chip">{deck.main.filter((e) => e.printing !== 'Normal' || byId[e.card].num > 188).reduce((a, e) => a + e.qty, 0)} foils and specials</span>
         </div>
         <button className="cta" onClick={() => onOpen(deck)} style={{ ['--glow' as any]: COLOR_HEX[deck.colors[0]] }}>Open deck</button>
