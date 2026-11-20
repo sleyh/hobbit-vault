@@ -1,0 +1,26 @@
+name: Refresh Scryfall data
+# Pulls German names, rules text and image links from Scryfall and commits them,
+# so the app has them even when a build can't reach Scryfall.
+on:
+  push:
+    branches: [main]
+    paths: [scripts/fetch-scryfall.mjs, .github/workflows/scryfall.yml]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/fetch-scryfall.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/scryfall.json
+          git diff --cached --quiet || git commit -m "Refresh Scryfall data" && git push
