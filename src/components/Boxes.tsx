@@ -10,6 +10,12 @@ const BLURB: Record<string, string> = {
   box3: 'Spare normal commons and uncommons.',
 }
 const HOLD_MS = 320
+const COLORS: Record<string, string[]> = Object.fromEntries(decks.map((d) => [d.id, d.colors]))
+const Pips = ({ place, size = 14 }: { place: string; size?: number }) => {
+  const cs = COLORS[place.split(':')[0]]
+  if (!cs) return null
+  return <span className="pips-sm">{cs.map((c) => <img key={c} src={`https://svgs.scryfall.io/card-symbols/${c}.svg`} alt={c} width={size} height={size} />)}</span>
+}
 
 type Drag = { copy: Copy; from: string; x: number; y: number }
 
@@ -94,6 +100,7 @@ export function Boxes({ onCard }: { onCard: (c: Card, p: Printing) => void }) {
           {PLACES.map((p) => (
             <button key={p} role="tab" aria-selected={place === p} className={`shelf-item ${place === p ? 'on' : ''}`} onClick={() => setPlace(p)}>
               <span className="stack" style={{ height: 8 + (sizes[p] / max) * 70 }} />
+              <Pips place={p} />
               <span className="shelf-label">{LOCATION_LABEL[p]}</span>
               <span className="shelf-n">{sizes[p]}</span>
             </button>
@@ -134,7 +141,7 @@ export function Boxes({ onCard }: { onCard: (c: Card, p: Printing) => void }) {
               <div className="dock-grid">
                 {PLACES.map((p) => (
                   <div key={p} data-drop={p} className={`dock-tile ${over === p ? 'over' : ''} ${p === drag.from ? 'here' : ''}`}>
-                    <span>{LOCATION_LABEL[p]}</span><small>{p === drag.from ? 'Here now' : `${sizes[p]} cards`}</small>
+                    <span className="dock-name"><Pips place={p} size={13} />{LOCATION_LABEL[p]}</span><small>{p === drag.from ? 'Here now' : `${sizes[p]} cards`}</small>
                   </div>
                 ))}
               </div>
