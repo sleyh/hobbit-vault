@@ -31,6 +31,7 @@ export const LOCATION_LABEL: Record<string, string> = {
   'wolves:main': 'Wolves deck', 'wolves:spares': 'Wolves spares',
   'goblins:main': 'Goblins deck', 'goblins:spares': 'Goblins spares',
   'humans:main': 'Humans deck', 'humans:spares': 'Humans spares',
+  'elves:main': 'Elves deck', 'elves:spares': 'Elves spares',
   box2: 'Box 2', box3: 'Box 3',
 }
 export const COLOR_HEX: Record<Color, string> = { W: '#efe3bd', U: '#4f9ed6', B: '#8f7aa3', R: '#e2563a', G: '#5fae63' }
@@ -63,7 +64,54 @@ export const price = (c: Card, p: Printing) => {
 
 export const owned: Record<string, number> = {}
 for (const cp of copies) owned[cp.card] = (owned[cp.card] || 0) + cp.qty
-export const totalOwned = copies.reduce((a, c) => a + c.qty, 0)
+
+/* ---------- moving copies between boxes and decks (saved on this device) ---------- */
+export interface Move { card: string; printing: Printing; from: string; to: string; at: number }
+const MOVES_KEY = 'hobbit-vault:moves'
+const baseCopies: Copy[] = JSON.parse(JSON.stringify(copies))
+const baseDecks: Deck[] = JSON.parse(JSON.stringify(decks))
+let moves: Move[] = []
+try { moves = JSON.parse(localStorage.getItem(MOVES_KEY) || '[]') } catch { moves = [] }
+let version = 0
+const listeners = new Set<() => void>()
+export const subscribe = (fn: () => void) => { listeners.add(fn); return () => { listeners.delete(fn) } }
+export const getVersion = () => version
+export const getMoves = () => moves
+
+function rebuild() {
+  const next: Copy[] = JSON.parse(JSON.stringify(baseCopies))
+  const kept: Move[] = []
+  for (const m of moves) {
+    const c = next.find((x) => x.card === m.card && x.printing === m.printing)
+    if (!c || !c.locations[m.from]) continue   // export changed since: drop the stale move
+    c.locations[m.from] -= 1
+    if (!c.locations[m.from]) delete c.locations[m.from]
+    c.locations[m.to] = (c.locations[m.to] || 0) + 1
+    kept.push(m)
+  }
+  moves = kept
+  copies.splice(0, copies.length, ...next)
+  // built decks follow the copies that sit in their deck boxes
+  decks.forEach((d, i) => {
+    if (!d.built) { d.main = baseDecks[i].main; d.spares = baseDecks[i].spares; return }
+    for (const part of ['main', 'spares'] as const) {
+      const key = `${d.id}:${part}`
+      d[part] = copies.filter((c) => c.locations[key]).map((c) => ({ card: c.card, printing: c.printing, qty: c.locations[key] }))
+    }
+  })
+  try { localStorage.setItem(MOVES_KEY, JSON.stringify(moves)) } catch { /* private mode */ }
+  version++
+  listeners.forEach((f) => f())
+}
+export function moveCopy(card: string, printing: Printing, from: string, to: string) {
+  if (from === to) return
+  moves = [...moves, { card, printing, from, to, at: Date.now() }]
+  rebuild()
+}
+export function undoMove() { moves = moves.slice(0, -1); rebuild() }
+export function resetMoves() { moves = []; rebuild() }
+if (moves.length) rebuild()
+export const totalOwned = baseCopies.reduce((a, c) => a + c.qty, 0)
 
 /** Where are the copies of this card (all versions)? */
 export function whereIs(cardName: string) {

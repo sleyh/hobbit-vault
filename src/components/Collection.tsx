@@ -2,6 +2,7 @@ import Fuse from 'fuse.js'
 import { useMemo, useState } from 'react'
 import { byId, Card, cards, Color, copies, deName, owned, Printing, totalOwned } from '../lib/data'
 import { CardImg } from './CardImage'
+import { useVersion } from '../lib/useVersion'
 
 const COLORS: Color[] = ['W', 'U', 'B', 'R', 'G']
 const PLACES = [
@@ -11,6 +12,7 @@ const docs = cards.map((c) => ({ id: c.id, name: c.name, de: deName(c), types: c
 const fuse = new Fuse(docs, { keys: [{ name: 'name', weight: 3 }, { name: 'de', weight: 3 }, { name: 'adv', weight: 2 }, { name: 'types', weight: 1.5 }, { name: 'text', weight: 0.6 }, { name: 'num', weight: 2 }], threshold: 0.32, ignoreLocation: true })
 
 export function Collection({ onCard }: { onCard: (c: Card, p: Printing) => void }) {
+  const v = useVersion()
   const [q, setQ] = useState('')
   const [cols, setCols] = useState<Color[]>([])
   const [place, setPlace] = useState('any')
@@ -33,7 +35,7 @@ export function Collection({ onCard }: { onCard: (c: Card, p: Printing) => void 
       }
     }
     return rows
-  }, [q, cols, place, fancy, mine])
+  }, [q, cols, place, fancy, mine, v])
   const count = list.reduce((a, r) => a + r.qty, 0)
   return (
     <section className="screen collection">

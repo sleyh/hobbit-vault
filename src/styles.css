@@ -248,3 +248,23 @@ select.chip-btn { appearance: none; color: var(--accent); }
 .sheet-hero .holo-card.is-surge::after { opacity: 0.45; animation-duration: 3.5s; }
 @media (prefers-reduced-motion: reduce) { .sheet-hero .holo-card.is-foil::after { animation: none; } }
 .chip-engine { font-weight: 600; background: rgba(255, 255, 255, 0.16); }
+
+/* ---------- drag cards between boxes ---------- */
+.hint { color: var(--label2); font-size: 13px; margin: 6px 0 0; }
+.link { color: var(--accent); font-weight: 600; font-size: inherit; padding: 2px 2px; }
+.draggable { -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; transition: opacity 0.2s, transform 0.2s; }
+.draggable.lifted { opacity: 0.35; transform: scale(0.98); }
+.boxes.is-dragging { overflow: hidden; }
+.drag-ghost { position: fixed; z-index: 70; width: 72px; translate: -50% -115%; pointer-events: none; border-radius: 5px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,.6); }
+.drag-ghost img { display: block; width: 100%; aspect-ratio: 63 / 88; object-fit: cover; opacity: 1; }
+.drop-dock { position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; padding: 14px max(14px, env(safe-area-inset-right)) calc(14px + var(--safe-b)) max(14px, env(safe-area-inset-left)); border-radius: 22px 22px 0 0; background: rgba(28, 28, 30, 0.96); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: 0 -20px 50px rgba(0,0,0,.45); }
+.dock-title { margin: 0 4px 10px; font-size: 13px; color: var(--label2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dock-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 640px; margin: 0 auto; }
+.dock-tile { display: grid; gap: 1px; padding: 11px 14px; border-radius: 14px; background: var(--fill); transition: background 0.15s, transform 0.15s, box-shadow 0.15s; }
+.dock-tile span { font-size: 15px; font-weight: 600; }
+.dock-tile small { font-size: 12px; color: var(--label2); font-variant-numeric: tabular-nums; }
+.dock-tile.over { background: var(--accent); transform: scale(1.04); box-shadow: 0 8px 24px rgba(10, 132, 255, 0.4); }
+.dock-tile.over small { color: rgba(255,255,255,.8); }
+.dock-tile.here { opacity: 0.4; }
+.toast { position: fixed; z-index: 65; left: 50%; translate: -50% 0; bottom: calc(var(--nav-h) + var(--safe-b) + 22px); display: flex; align-items: center; gap: 14px; max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 16px; background: rgba(44, 44, 46, 0.92); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: 0 12px 32px rgba(0,0,0,.4); font-size: 15px; }
+.toast span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

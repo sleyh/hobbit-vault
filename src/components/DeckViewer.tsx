@@ -4,6 +4,7 @@ import { byId, Card, Deck, deckCount, deName, Entry, price, Printing, RARITY_HEX
 import { Mana } from '../lib/mana'
 import { useSwipe } from '../lib/useSwipe'
 import { useFit } from '../lib/useFit'
+import { useVersion } from '../lib/useVersion'
 import { Ambient } from './Ambient'
 import { HoloCard } from './CardImage'
 import { KineticTitle } from './Kinetic'
@@ -78,7 +79,8 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
   const [sort, setSort] = useState<SortKey>('number')
   const [menu, setMenu] = useState(false)
   const fit = useFit(340, 0.62, 0.9)
-  const rows = useMemo(() => order(deck, part, sort), [deck, part, sort])
+  const v = useVersion()
+  const rows = useMemo(() => order(deck, part, sort), [deck, part, sort, v])
   const { pos, index, go, onPan, onPanEnd } = useSwipe(rows.length, Math.min(window.innerWidth, 520) * 0.42)
   useEffect(() => { go(0) }, [part, sort])
   const row = rows[Math.min(index, rows.length - 1)]
