@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { byId, Card, Deck, deckCount, deName, Entry, price, Printing, RARITY_HEX, versionLabel } from '../lib/data'
 import { Mana } from '../lib/mana'
 import { useSwipe } from '../lib/useSwipe'
+import { useFit } from '../lib/useFit'
 import { Ambient } from './Ambient'
 import { HoloCard } from './CardImage'
 import { KineticTitle } from './Kinetic'
@@ -76,6 +77,7 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
   const [part, setPart] = useState<'main' | 'spares'>('main')
   const [sort, setSort] = useState<SortKey>('number')
   const [menu, setMenu] = useState(false)
+  const fit = useFit(340, 0.62, 0.9)
   const rows = useMemo(() => order(deck, part, sort), [deck, part, sort])
   const { pos, index, go, onPan, onPanEnd } = useSwipe(rows.length, Math.min(window.innerWidth, 520) * 0.42)
   useEffect(() => { go(0) }, [part, sort])
@@ -118,7 +120,7 @@ export function DeckViewer({ deck, onBack, onCard }: { deck: Deck; onBack: () =>
         </div>
       </header>
 
-      <div className="stage">
+      <div className="stage" ref={fit.ref} style={fit.style}>
         {rows.map((r, i) => Math.abs(i - index) <= 4 && (
           <Slot key={part + i} row={r} i={i} pos={pos} active={i === index} onOpen={() => (i === index ? onCard(byId[r.card], r.printing) : go(i))} />
         ))}

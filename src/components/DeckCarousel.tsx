@@ -2,6 +2,7 @@ import { motion, MotionValue, useTransform } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { byId, COLOR_HEX, Deck, deckCount, decks, signature } from '../lib/data'
 import { useSwipe } from '../lib/useSwipe'
+import { useFit } from '../lib/useFit'
 import { Ambient } from './Ambient'
 import { HoloCard } from './CardImage'
 import { KineticTitle } from './Kinetic'
@@ -48,6 +49,7 @@ function Slide({ deck, i, pos, onOpen }: { deck: Deck; i: number; pos: MotionVal
 export function DeckCarousel({ onOpen, start }: { onOpen: (d: Deck) => void; start: number }) {
   const { pos, index, go, onPan, onPanEnd } = useSwipe(decks.length, Math.min(window.innerWidth, 520) * 0.7, start)
   const deck = decks[index]
+  const fit = useFit(280, 0.52, 0.74)
   const hero = byId[signature(deck, 1)[0].card]
   const [dir, setDir] = useState(1)
   const [prev, setPrev] = useState(index)
@@ -60,7 +62,7 @@ export function DeckCarousel({ onOpen, start }: { onOpen: (d: Deck) => void; sta
         <span className="brand"><span className="set-icon r-mythic" /> Hobbit Vault</span>
         <span className="topbar-meta">{index + 1} of {decks.length} decks</span>
       </header>
-      <div className="deck-stage">
+      <div className="deck-stage" ref={fit.ref} style={fit.style}>
         {decks.map((d, i) => <Slide key={d.id} deck={d} i={i} pos={pos} onOpen={() => (i === index ? onOpen(d) : go(i))} />)}
       </div>
       <div className="deck-caption">

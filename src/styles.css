@@ -68,7 +68,7 @@ img { user-select: none; -webkit-user-drag: none; }
 .decks-screen, .viewer { user-select: none; -webkit-user-select: none; touch-action: pan-y; }
 .deck-stage { position: relative; z-index: 2; flex: 1 1 auto; min-height: 0; perspective: 1400px; cursor: grab; }
 .deck-stage:active { cursor: grabbing; }
-.deck-slide { --w: min(52vw, 280px, calc((100dvh - 470px) * 0.716)); position: absolute; left: 50%; top: 50%; width: var(--w); margin-left: calc(var(--w) / -2); translate: 0 -46%; transform-style: preserve-3d; }
+.deck-slide { --cw: var(--w, min(52vw, 280px, calc((100dvh - 470px) * 0.716))); position: absolute; left: 50%; top: 50%; width: var(--cw); margin-left: calc(var(--cw) / -2); translate: 0 -52%; transform-style: preserve-3d; }
 .deck-hit { display: block; width: 100%; }
 .fan { position: relative; width: 100%; aspect-ratio: 63 / 88; }
 .fan-card { position: absolute; inset: 0; transform-origin: 50% 110%; }
@@ -91,7 +91,7 @@ img { user-select: none; -webkit-user-drag: none; }
 
 /* ---------- deck viewer ---------- */
 .stage { position: relative; z-index: 2; flex: 1 1 auto; min-height: 0; perspective: 1100px; transform-style: preserve-3d; cursor: grab; }
-.slot { --w: min(62vw, 340px, calc((100dvh - 400px) * 0.716)); position: absolute; left: 50%; top: 50%; width: var(--w); margin-left: calc(var(--w) / -2); translate: 0 -50%; transform-style: preserve-3d; }
+.slot { --cw: var(--w, min(62vw, 340px, calc((100dvh - 400px) * 0.716))); position: absolute; left: 50%; top: 50%; width: var(--cw); margin-left: calc(var(--cw) / -2); translate: 0 -50%; transform-style: preserve-3d; }
 .slot-hit { display: block; width: 100%; }
 .qty-badge { position: absolute; top: -9px; right: -9px; min-width: 34px; height: 34px; padding: 0 9px; border-radius: 99px; display: grid; place-items: center; background: #fff; color: #000; font-weight: 700; font-size: 16px; letter-spacing: -0.02em; box-shadow: 0 6px 18px rgba(0,0,0,.35); font-variant-numeric: tabular-nums; }
 .qty-badge.sm { top: 6px; right: 6px; min-width: 22px; height: 22px; font-size: 12px; padding: 0 6px; }
