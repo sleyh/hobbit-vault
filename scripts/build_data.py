@@ -132,9 +132,13 @@ for did, f, short, built, _ in DECKS:
         target = loc if built else plan
         for nm, s, n in parse(path):
             if s is None:
-                basics.setdefault(did, collections.Counter())[nm] += 1; continue
-            if did == 'humans': k = take_listed(nm, s, n)
-            elif did == 'dwarves' and part == 'main' and nm == 'The Misty Mountains Cold':
+                fancy_basic = [k for k in byname(nm) if score(k) > 0] if (built and part == 'main') else []
+                if fancy_basic:   # e.g. the special Island HOB195 replaces one basic Island
+                    k = fancy_basic[0]; pool[k] -= 1; target[f'{did}:{part}'][k] += 1
+                else:
+                    basics.setdefault(did, collections.Counter())[nm] += 1
+                continue
+            if did == 'dwarves' and part == 'main' and nm == 'The Misty Mountains Cold':
                 k = ('HOB', 104, 'Foil'); pool[k] -= 1
             elif did == 'dwarves' and part == 'spares' and nm == 'Dwalin, Weaponmaster':
                 k = ('HOB', 311, 'Normal') if pool[('HOB', 311, 'Normal')] > 0 else take(nm, n, False); pool[k] -= (1 if k == ('HOB', 311, 'Normal') else 0)

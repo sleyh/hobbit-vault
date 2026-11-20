@@ -728,14 +728,14 @@
     "qty": 1
    },
    {
-    "card": "HOB-32",
-    "printing": "Normal",
+    "card": "HOB-34",
+    "printing": "Foil",
     "qty": 1
    },
    {
     "card": "HOB-34",
     "printing": "Normal",
-    "qty": 3
+    "qty": 2
    },
    {
     "card": "HOB-35",
@@ -744,8 +744,13 @@
    },
    {
     "card": "HOB-39",
+    "printing": "Foil",
+    "qty": 2
+   },
+   {
+    "card": "HOB-39",
     "printing": "Normal",
-    "qty": 4
+    "qty": 2
    },
    {
     "card": "HOB-42",
@@ -759,18 +764,23 @@
    },
    {
     "card": "HOB-51",
-    "printing": "Normal",
+    "printing": "Foil",
     "qty": 1
    },
    {
     "card": "HOB-52",
-    "printing": "Normal",
+    "printing": "Foil",
     "qty": 2
    },
    {
     "card": "HOB-55",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-55",
     "printing": "Normal",
-    "qty": 2
+    "qty": 1
    },
    {
     "card": "HOB-57",
@@ -779,8 +789,13 @@
    },
    {
     "card": "HOB-58",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-58",
     "printing": "Normal",
-    "qty": 2
+    "qty": 1
    },
    {
     "card": "HOB-59",
@@ -799,13 +814,28 @@
    },
    {
     "card": "HOB-162",
-    "printing": "Normal",
+    "printing": "Foil",
+    "qty": 1
+   },
+   {
+    "card": "HOB-186",
+    "printing": "Foil",
     "qty": 1
    },
    {
     "card": "HOB-186",
     "printing": "Normal",
-    "qty": 4
+    "qty": 3
+   },
+   {
+    "card": "HOB-195",
+    "printing": "Normal",
+    "qty": 1
+   },
+   {
+    "card": "HOB-218",
+    "printing": "Foil",
+    "qty": 1
    },
    {
     "card": "HOB-218",
@@ -921,7 +951,7 @@
    }
   ],
   "basics": {
-   "Island": 11,
+   "Island": 10,
    "Plains": 9
   }
  },
@@ -948,7 +978,7 @@
    },
    {
     "card": "HOB-39",
-    "printing": "Foil",
+    "printing": "Normal",
     "qty": 2
    },
    {
