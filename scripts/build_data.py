@@ -145,6 +145,27 @@ for did, f, short, built, _ in DECKS:
             elif part == 'spares': k = take_listed(nm, s, n)
             else: k = take(nm, n, True)
             target[f'{did}:{part}'][k] += 1
+# Spare piles upgraded to better versions from Box 2 (done 20 Nov 2026)
+SPARE_UPGRADES = [
+    ('dwarves', ('HOB', 106, 'Normal'), ('HOB', 106, 'Foil')),
+    ('dwarves', ('HOB', 171, 'Normal'), ('HOB', 171, 'Foil')),
+    ('wolves', ('HOB', 116, 'Normal'), ('HOB', 116, 'Foil')),
+    ('wolves', ('HOB', 138, 'Normal'), ('HOB', 138, 'Foil')),
+    ('goblins', ('HOB', 74, 'Normal'), ('HOB', 223, 'Normal')),
+    ('goblins', ('HOB', 92, 'Normal'), ('HOB', 225, 'Normal')),
+    ('goblins', ('HOB', 107, 'Normal'), ('HOB', 107, 'Foil')),
+    ('goblins', ('HOB', 107, 'Normal'), ('HOB', 107, 'Foil')),
+    ('goblins', ('HOB', 156, 'Normal'), ('HOB', 156, 'Foil')),
+    ('humans', ('HOB', 20, 'Normal'), ('HOB', 20, 'Foil')),
+    ('humans', ('HOB', 30, 'Normal'), ('HOB', 30, 'Foil')),
+    ('humans', ('HOB', 41, 'Normal'), ('HOB', 41, 'Foil')),
+    ('humans', ('HOB', 174, 'Normal'), ('HOB', 174, 'Foil')),
+]
+for did, old, new in SPARE_UPGRADES:
+    L = f'{did}:spares'
+    assert loc[L][old] > 0 and pool[new] > 0, (did, old, new)
+    loc[L][old] -= 1; loc[L][new] += 1; pool[old] += 1; pool[new] -= 1
+    loc[L] = +loc[L]
 # Elves not built: its planned cards go back to the boxes
 for L, c in plan.items():
     for k, q in c.items(): pool[k] += q
