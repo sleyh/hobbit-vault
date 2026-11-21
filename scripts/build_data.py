@@ -103,7 +103,7 @@ DECKS = [  # id, file, short, built, sleeves
     ('wolves', 'Black-Green Wolves', 'Wolves', True, 'Head of the Hunt'),
     ('goblins', 'Black-Red Goblins', 'Goblins', True, 'Gandalf, Spark Starter'),
     ('humans', 'White-Blue Humans', 'Humans', True, 'Smaug'),
-    ('elves', 'Green-Blue Elves', 'Elves', False, 'Gollum'),
+    ('elves', 'Green-Blue Elves', 'Elves', False, 'Elves'),
 ]
 def score(k):
     s, n, pr = k
