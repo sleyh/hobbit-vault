@@ -103,7 +103,7 @@ DECKS = [  # id, file, short, built, sleeves
     ('wolves', 'Black-Green Wolves', 'Wolves', True, 'Head of the Hunt'),
     ('goblins', 'Black-Red Goblins', 'Goblins', True, 'Gandalf, Spark Starter'),
     ('humans', 'White-Blue Humans', 'Humans', True, 'Smaug'),
-    ('elves', 'Green-Blue Elves', 'Elves', False, 'Elves'),
+    ('elves', 'Green-Blue Elves', 'Elves', True, 'Elves'),
 ]
 def score(k):
     s, n, pr = k
@@ -126,47 +126,28 @@ def take_listed(nm, s, n):
         k = (s, n, pr)
         if pool[k] > 0: pool[k] -= 1; return k
     return take(nm, n, False)
-for did, f, short, built, _ in DECKS:
-    for part in ('main', 'spares'):
-        path = V + f + '.txt' if part == 'main' else V + 'spares/' + f + ' - Spares.txt'
-        target = loc if built else plan
-        for nm, s, n in parse(path):
-            if s is None:
-                fancy_basic = [k for k in byname(nm) if score(k) > 0] if (built and part == 'main') else []
-                if fancy_basic:   # e.g. the special Island HOB195 replaces one basic Island
-                    k = fancy_basic[0]; pool[k] -= 1; target[f'{did}:{part}'][k] += 1
-                else:
-                    basics.setdefault(did, collections.Counter())[nm] += 1
-                continue
-            if did == 'dwarves' and part == 'main' and nm == 'The Misty Mountains Cold':
-                k = ('HOB', 104, 'Foil'); pool[k] -= 1
-            elif did == 'dwarves' and part == 'spares' and nm == 'Dwalin, Weaponmaster':
-                k = ('HOB', 311, 'Normal') if pool[('HOB', 311, 'Normal')] > 0 else take(nm, n, False); pool[k] -= (1 if k == ('HOB', 311, 'Normal') else 0)
-            elif part == 'spares': k = take_listed(nm, s, n)
-            else: k = take(nm, n, True)
-            target[f'{did}:{part}'][k] += 1
-# Spare piles upgraded to better versions from Box 2 (done 20 Nov 2026)
-SPARE_UPGRADES = [
-    ('dwarves', ('HOB', 106, 'Normal'), ('HOB', 106, 'Foil')),
-    ('dwarves', ('HOB', 171, 'Normal'), ('HOB', 171, 'Foil')),
-    ('wolves', ('HOB', 116, 'Normal'), ('HOB', 116, 'Foil')),
-    ('wolves', ('HOB', 138, 'Normal'), ('HOB', 138, 'Foil')),
-    ('goblins', ('HOB', 74, 'Normal'), ('HOB', 223, 'Normal')),
-    ('goblins', ('HOB', 92, 'Normal'), ('HOB', 225, 'Normal')),
-    ('goblins', ('HOB', 107, 'Normal'), ('HOB', 107, 'Foil')),
-    ('goblins', ('HOB', 107, 'Normal'), ('HOB', 107, 'Foil')),
-    ('goblins', ('HOB', 156, 'Normal'), ('HOB', 156, 'Foil')),
-    ('humans', ('HOB', 20, 'Normal'), ('HOB', 20, 'Foil')),
-    ('humans', ('HOB', 30, 'Normal'), ('HOB', 30, 'Foil')),
-    ('humans', ('HOB', 41, 'Normal'), ('HOB', 41, 'Foil')),
-    ('humans', ('HOB', 174, 'Normal'), ('HOB', 174, 'Foil')),
-]
-for did, old, new in SPARE_UPGRADES:
-    L = f'{did}:spares'
-    assert loc[L][old] > 0 and pool[new] > 0, (did, old, new)
-    loc[L][old] -= 1; loc[L][new] += 1; pool[old] += 1; pool[new] -= 1
-    loc[L] = +loc[L]
-# Elves not built: its planned cards go back to the boxes
+# Order matters: the decks pick the best copies in priority order. All four first decks
+# (main decks, then spare piles) got every foil and special version before the Elves were built (22 Nov 2026).
+ORDER = [(d, 'main') for d in DECKS[:4]] + [(d, 'spares') for d in DECKS[:4]] + [(DECKS[4], 'main'), (DECKS[4], 'spares')]
+for (did, f, short, built, _), part in ORDER:
+    path = V + f + '.txt' if part == 'main' else V + 'spares/' + f + ' - Spares.txt'
+    target = loc if built else plan
+    for nm, s, n in parse(path):
+        if s is None:
+            fancy_basic = [k for k in byname(nm) if score(k) > 0] if (built and part == 'main') else []
+            if fancy_basic:   # e.g. the special Island HOB195 replaces one basic Island
+                k = fancy_basic[0]; pool[k] -= 1; target[f'{did}:{part}'][k] += 1
+            else:
+                basics.setdefault(did, collections.Counter())[nm] += 1
+            continue
+        if did == 'dwarves' and part == 'main' and nm == 'The Misty Mountains Cold':
+            k = ('HOB', 104, 'Foil'); pool[k] -= 1       # kept the foil 104 instead of the 321 promo
+        elif did == 'wolves' and part == 'spares' and nm == 'Nighthowl Pursuer':
+            k = take_listed(nm, s, n)                   # foils not swapped in (spare pile still being checked)
+        else:
+            k = take(nm, n, True)
+        target[f'{did}:{part}'][k] += 1
+# Unbuilt decks: their planned cards go back to the boxes
 for L, c in plan.items():
     for k, q in c.items(): pool[k] += q
 # Boxes: per number one copy in box 2 (rares/mythics/specials/foils: all), rest box 3

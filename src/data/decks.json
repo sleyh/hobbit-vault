@@ -433,12 +433,12 @@
    },
    {
     "card": "HOB-118",
-    "printing": "Normal",
+    "printing": "Foil",
     "qty": 1
    },
    {
     "card": "HOB-125",
-    "printing": "Normal",
+    "printing": "Foil",
     "qty": 1
    },
    {
@@ -973,7 +973,7 @@
    "G",
    "U"
   ],
-  "built": false,
+  "built": true,
   "sleeves": "Elves",
   "main": [
    {
@@ -1003,7 +1003,7 @@
    },
    {
     "card": "HOB-118",
-    "printing": "Foil",
+    "printing": "Normal",
     "qty": 1
    },
    {
@@ -1028,13 +1028,8 @@
    },
    {
     "card": "HOB-125",
-    "printing": "Foil",
-    "qty": 1
-   },
-   {
-    "card": "HOB-125",
     "printing": "Normal",
-    "qty": 1
+    "qty": 2
    },
    {
     "card": "HOB-127",
